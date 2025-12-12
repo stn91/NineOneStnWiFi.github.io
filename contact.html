@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 极速WiFi</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #f5f7fa; }
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(102, 126, 234, 0.1); color: #667eea; }
+
+        .contact-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .contact-info h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .contact-item {
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+        .contact-item .icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 2rem;
+        }
+        .contact-item h3 { margin-bottom: 0.5rem; }
+        .contact-item p { color: #666; }
+
+        .map {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            border: 2px dashed #e0e0e0;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🚀 极速WiFi</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="order.html">在线办理</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 联系我们 -->
+    <section class="contact-section">
+        <div class="contact-header">
+            <h1>📞 联系我们</h1>
+            <p>专业客服团队，随时为您服务</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>联系方式</h2>
+                
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <h3>客服热线</h3>
+                    <p><strong>400-123-4567</strong></p>
+                    <p>24小时全天候服务</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💬</div>
+                    <h3>在线客服</h3>
+                    <p><strong>www.jisuwifi.com</strong></p>
+                    <p>点击右下角在线客服按钮</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>邮箱</h3>
+                    <p><strong>service@jisuwifi.com</strong></p>
+                    <p>24小时内回复</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🏢</div>
+                    <h3>公司地址</h3>
+                    <p><strong>北京市朝阳区科技园区88号</strong></p>
+                    <p>营业时间：9:00-18:00</p>
+                </div>
+
+                <div class="contact-item">
+                   
