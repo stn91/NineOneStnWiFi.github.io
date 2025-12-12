@@ -17,15 +17,14 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            background-attachment: fixed;
         }
 
-        /* 导航栏 */
+        /* 导航栏 - 简化版，确保兼容性 */
         nav {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
             z-index: 1000;
         }
 
@@ -73,25 +72,30 @@
             padding: 2rem;
         }
 
-        /* 首页横幅 */
+        /* 首页横幅 - 简化背景，确保可见 */
         .hero {
             text-align: center;
             color: white;
             padding: 4rem 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            animation: fadeInUp 0.8s ease 0.2s;
-            animation-fill-mode: both;
         }
 
         .cta-button {
@@ -104,8 +108,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s;
-            animation: fadeInUp 0.8s ease 0.4s;
-            animation-fill-mode: both;
+            align-self: center;
         }
 
         .cta-button:hover {
@@ -113,13 +116,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        /* 套餐卡片 */
+        /* 套餐卡片 - 简化样式 */
         .section {
             background: white;
             border-radius: 20px;
             padding: 3rem 2rem;
             margin: 2rem 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .section h2 {
@@ -136,45 +139,23 @@
         }
 
         .plan-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #f8f9fa;
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .plan-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-            opacity: 0;
-        }
-
-        .plan-card:hover::before {
-            animation: shine 0.5s ease-in-out;
+            border: 2px solid transparent;
         }
 
         .plan-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .plan-card.featured {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            transform: scale(1.05);
-        }
-
-        .plan-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
+            border: 2px solid #fff;
         }
 
         .plan-name {
@@ -191,4 +172,26 @@
 
         .plan-price span {
             font-size: 1rem;
-         
+            opacity: 0.8;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .plan-card.featured .plan-features li {
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .plan-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+        
