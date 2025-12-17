@@ -1,109 +1,107 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宿舍WiFi极速计划</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome 图标 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- 自定义样式（让文字更清晰） -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- 配置文件（后续修改内容只改这个） -->
-    <script src="config.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>极速计划 - STN工作室</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;flex-direction:column;line-height:1.6;color:#333;}
+.container{max-width:900px;margin:0 auto;padding:20px;flex:1;}
+.card{background:white;border-radius:20px;padding:60px 40px;margin-top:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:fadeIn 0.8s ease-out;}
+h1{font-size:3rem;color:#2c3e50;margin-bottom:20px;text-align:center;font-weight:800;}
+.subtitle{font-size:1.2rem;color:#7f8c8d;text-align:center;margin-bottom:30px;padding-bottom:20px;border-bottom:2px solid #ecf0f1;}
+.content{font-size:1.1rem;color:#34495e;margin-bottom:30px;white-space:pre-line;}
+.content p{margin-bottom:15px;}
+.button-group{display:flex;gap:20px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
+.btn{padding:15px 30px;border:none;border-radius:12px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;text-decoration:none;display:inline-block;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.btn-primary{background:linear-gradient(135deg,#3498db 0%,#2980b9 100%);color:white;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 7px 20px rgba(52,152,219,0.4);}
+.btn-secondary{background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);color:white;}
+.btn-secondary:hover{transform:translateY(-3px);box-shadow:0 7px 20px rgba(231,76,60,0.4);}
+.page-section{display:none;}
+.page-section.active{display:block;}
+.analysis-content{background:#f8f9fa;padding:25px;border-radius:15px;margin:20px 0;}
+.analysis-item{margin-bottom:25px;padding:20px;background:white;border-radius:10px;border-left:4px solid #3498db;}
+.analysis-item h3{color:#2c3e50;margin-bottom:15px;font-size:1.3rem;}
+.percentage{display:inline-block;padding:4px 12px;background:#e74c3c;color:white;border-radius:20px;font-weight:bold;margin:5px 10px 5px 0;}
+.edit-area{width:100%;min-height:300px;padding:15px;border:2px dashed #bdc3c7;border-radius:10px;font-size:1rem;font-family:inherit;resize:vertical;}
+footer{text-align:center;padding:20px;color:white;font-size:0.9rem;opacity:0.8;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:768px){h1{font-size:2rem;}.card{padding:40px 20px;margin-top:20px;}.button-group{flex-direction:column;}.btn{width:100%;}}
+</style>
 </head>
-<body class="bg-gray-50">
-    <!-- 导航栏 -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <i class="fas fa-wifi text-2xl text-blue-600"></i>
-                    <span class="text-xl font-bold text-gray-800">宿舍WiFi极速计划</span>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium">功能特点</a>
-                    <a href="#plans" class="text-gray-700 hover:text-blue-600 font-medium">套餐价格</a>
-                    <a href="#process" class="text-gray-700 hover:text-blue-600 font-medium">开通流程</a>
-                    <a href="#faq" class="text-gray-700 hover:text-blue-600 font-medium">常见问题</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">联系我们</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- 手机菜单 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#features" class="block text-gray-700">功能特点</a>
-                <a href="#plans" class="block text-gray-700">套餐价格</a>
-                <a href="#process" class="block text-gray-700">开通流程</a>
-                <a href="#faq" class="block text-gray-700">常见问题</a>
-                <a href="#contact" class="block text-gray-700">联系我们</a>
-            </div>
-        </div>
-    </nav>
+<body>
+<div class="container">
+<div id="main-page" class="page-section active">
+<div class="card">
+<h1>极速计划</h1>
+<div class="subtitle">STN工作室官方公示</div>
+<div class="content"><p>这里是公示内容区域，您可以自由修改任何文字。</p><p>支持多段落显示，所有内容都会在页面上清晰呈现。</p><p>您可以在这里写：</p><p>- 项目介绍</p><p>- 服务条款</p><p>- 更新日志</p><p>- 任何需要公示的信息</p><p>所有文字都会以高对比度清晰显示，确保易于阅读。</p><p>修改方法：直接编辑这段文字，保存后上传到GitHub即可。</p></div>
+<div class="button-group">
+<button class="btn btn-primary" onclick="showPage('wifi-page')"><i class="fas fa-wifi" style="margin-right:8px;"></i>WiFi卡顿快速定位</button>
+<button class="btn btn-secondary" onclick="showPage('custom-page')"><i class="fas fa-edit" style="margin-right:8px;"></i>使用卡顿重点软件/网页</button>
+</div>
+</div>
+</div>
 
-    <!-- 主要内容 -->
-    <main class="pt-16">
-        <!-- 顶部大横幅区域（英雄区域） -->
-        <section class="hero-section text-white text-center py-20 md:py-32">
-            <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 hero-title">
-                    告别卡顿，畅享极速网络
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 hero-subtitle">
-                    专为宿舍环境优化的WiFi解决方案，低延迟、高稳定、全覆盖
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="scrollToSection('plans')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold text-lg">
-                        <i class="fas fa-rocket mr-2"></i>立即开通
-                    </button>
-                    <button onclick="scrollToSection('features')" class="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-xl font-bold text-lg border-2 border-white/40">
-                        <i class="fas fa-info-circle mr-2"></i>了解更多
-                    </button>
-                </div>
-            </div>
-        </section>
+<div id="wifi-page" class="page-section">
+<div class="card">
+<h1>WiFi卡顿快速定位</h1>
+<div class="subtitle">一键诊断卡顿原因分布</div>
+<div class="analysis-content">
+<div class="analysis-item">
+<h3>📱 浏览网页卡顿/打不开</h3>
+<p><span class="percentage">95%</span>服务器问题（如DNS配置）</p>
+<p><span class="percentage">3%</span>设备类问题</p>
+<p><span class="percentage">2%</span>网速类问题</p>
+</div>
+<div class="analysis-item">
+<h3>🎮 玩游戏卡顿</h3>
+<p><span class="percentage">40%</span>服务器问题</p>
+<p><span class="percentage">20%</span>设备类问题</p>
+<p><span class="percentage">40%</span>网速类问题</p>
+</div>
+<div class="analysis-item">
+<h3>⬇️ 下载速度慢</h3>
+<p><span class="percentage">70%</span>服务器问题</p>
+<p><span class="percentage">10%</span>设备类问题</p>
+<p><span class="percentage">20%</span>网速类问题</p>
+</div>
+</div>
+<div class="button-group">
+<button class="btn btn-primary" onclick="showPage('main-page')"><i class="fas fa-arrow-left" style="margin-right:8px;"></i>返回主页</button>
+</div>
+</div>
+</div>
 
-        <!-- 功能特点 -->
-        <section id="features" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">为什么选择我们？</h2>
-                    <p class="text-gray-600">专为宿舍场景定制，解决你的网络烦恼</p>
-                </div>
-                <div id="features-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
+<div id="custom-page" class="page-section">
+<div class="card">
+<h1>使用卡顿重点软件/网页</h1>
+<div class="subtitle">请编辑您需要记录的内容</div>
+<div class="content"><p>在下方文本框中输入您要公示的内容：</p>
+<textarea class="edit-area" id="customText" placeholder="在这里输入您的内容...
 
-        <!-- 套餐价格 -->
-        <section id="plans" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">灵活套餐</h2>
-                    <p class="text-gray-600">按学期计费，性价比高</p>
-                </div>
-                <div id="plans-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </div>
-        </section>
+支持多行文本，支持任意文字。
 
-        <!-- 开通流程 -->
-        <section id="process" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">开通流程</h2>
-                    <p class="text-gray-600">简单三步，轻松搞定</p>
-                </div>
-                <div id="process-steps" class="flex flex-col md:flex-row justify-between items-center max-w-4xl mx-auto"></div>
-            </div>
-        </section>
+您可以写：
+- 卡顿软件列表
+- 问题网页地址
+- 解决方案
+- 注意事项
 
-        <
+修改后保存文件，内容会保留！"></textarea>
+<p style="margin-top:15px;color:#7f8c8d;font-size:0.9rem;">💡提示：直接在这个textarea里编辑文字，保存HTML文件后上传到GitHub，内容会被保留。</p>
+</div>
+<div class="button-group">
+<button class="btn btn-primary" onclick="showPage('main-page')"><i class="fas fa-arrow-left" style="margin-right:8px;"></i>返回主页</button>
+</div>
+</div>
+</div>
+</div>
+
+<footer>2025-STN工作室</footer>
+
+<script>
+function showPage(pageId){
+document.quer
