@@ -1,0 +1,51 @@
+/* 大横幅区域样式 - 让文字超级清晰 */
+.hero-section {
+    /* 深蓝到紫色的渐变背景 */
+    background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 50%, #581c87 100%);
+    
+    /* 确保文字在背景上层 */
+    position: relative;
+}
+
+/* 黑色半透明遮罩，让背景更暗，文字更清楚 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35); /* 35%透明度的黑层 */
+    z-index: 1;
+}
+
+/* 内容在遮罩上层 */
+.hero-section > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* 主标题样式 - 白色文字+黑色阴影 */
+.hero-title {
+    color: #ffffff; /* 纯白色 */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8), /* 黑色阴影，80%透明度 */
+                 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 800; /* 超粗字体 */
+}
+
+/* 副标题样式 - 白色文字+黑色阴影 */
+.hero-subtitle {
+    color: #ffffff; /* 纯白色 */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7),
+                 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 500; /* 中等粗细 */
+}
+
+/* 导航链接样式 */
+.nav-link {
+    color: #374151; /* 灰色 */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: #2563eb;
